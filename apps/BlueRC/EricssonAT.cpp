@@ -104,7 +104,7 @@ BOOL CEricssonAT::Receive(CString &sStatus)
 		CString sTail = saLines.GetTail();
 		// Here we check if a complete answer was received
 		if (sTail == "OK") {
-			if (saLines.Find("ERICSSON  ")) {
+			if (saLines.Find("SONY ERICSSON")) {
 				// The phone connected is an Ericsson.
 				// Set the Accessory menu
 				AddAccessoryMenu("MediaPlayer RC");

@@ -49,7 +49,8 @@ Section Uninstall
 	Delete "$DESKTOP\LaPlaya.lnk"
 	Delete "$SMPROGRAMS\LaPlaya.lnk"
 	Delete "$QUICKLAUNCH\LaPlaya.lnk"
-	Delete $INSTDIR\*.*
+	Delete $INSTDIR\LaPlaya.exe
+	Delete $INSTDIR\ReadMe.txt	
 	RMDir $INSTDIR
 	
 	Delete "$SMPROGRAMS\LaPlaya.lnk"

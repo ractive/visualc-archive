@@ -293,6 +293,75 @@ BOOL CExploTreeView::InitializeTree()
 			pDesktop->Release();
 			m_bInitialized = TRUE;
 			return true;
+
+			/*IShellFolder* pDesktop;
+			TV_ITEM tvItem={0};
+			TV_INSERTSTRUCT   tvInsert={0};
+			
+			if(FAILED(SHGetDesktopFolder(&pDesktop)))
+			{
+			   //TODO: free the pidl through IMalloc
+			   return false;
+			}
+
+			OLECHAR  olePath[MAX_PATH];
+   
+			MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, "D:\\Eigene Dateien\\MP3", -1, olePath, MAX_PATH);
+
+			
+			unsigned long ulEaten = 1;
+			HRESULT hr = pDesktop->ParseDisplayName(m_hWnd, NULL, olePath, &ulEaten, &pidl, NULL);
+			if (FAILED(hr)) {
+				int s = 5;
+			}
+
+			CPidlMgr mgr(NULL);
+			int nCount = mgr.GetCount(pidl);
+			nCount--;
+
+			IShellFolder * pParent = pDesktop;
+			IShellFolder * pCur;
+			LPITEMIDLIST pidlNext = pidl;
+
+			while(--nCount) {
+				pParent->BindToObject(pidlNext, NULL, IID_IShellFolder, (void**)&pCur);
+				pParent->Release();
+				pidlNext = mgr.GetNextItem(pidlNext);
+			}
+
+			LPITEMDATA pItemInfo = new _ITEMDATA;
+			m_ptrList.AddHead(pItemInfo);
+			if(pItemInfo == NULL)
+			{
+			   //TODO: free the pidl through IMalloc
+			   pDesktop->Release();
+			   return false;
+			}
+			pItemInfo->pidlSelf = pidl;
+			pItemInfo->pidlFullyQual = pidl;
+			pItemInfo->pParentFolder = pParent;
+
+			tvItem.mask = TVIF_PARAM | TVIF_TEXT | TVIF_IMAGE | TVIF_SELECTEDIMAGE | TVIF_CHILDREN;
+			tvItem.lParam= (LPARAM)pItemInfo;
+			STRRET strDispName;
+			pDesktop->GetDisplayNameOf(pidl, SHGDN_INFOLDER, &strDispName);
+			TCHAR psName[_MAX_PATH] = "";
+			GetFriendlyName(psName, pidl, &strDispName);
+			tvItem.pszText = psName;
+			tvItem.cchTextMax = MAX_PATH;
+			tvItem.iImage = GetIcon(pidl, FALSE);
+			tvItem.iSelectedImage = GetIcon(pidl, TRUE);
+
+
+			tvItem.cChildren = TRUE;
+			tvInsert.item = tvItem;
+			tvInsert.hInsertAfter = TVI_LAST;
+			HTREEITEM hItem = treeCtrl.InsertItem(&tvInsert);
+			treeCtrl.SelectItem(hItem);
+			treeCtrl.Expand(hItem, TVE_EXPAND);
+			pDesktop->Release();
+			m_bInitialized = TRUE;
+			return true;*/
 		}
 
 	}

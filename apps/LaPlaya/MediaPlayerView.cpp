@@ -30,8 +30,6 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #include "MediaPlayer2.h"
 #include "MainFrm.h"
 
-importlib("stdole32.tlb");
-
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #undef THIS_FILE
@@ -133,7 +131,6 @@ void CMediaPlayerView::OnUpdate(CView* pSender, LPARAM lHint, CObject* pHint)
 			FitToWindow();
 
 			m_pPlayer->SetAutoStart(pDoc->m_bAutoStart); // Disables the automatic play on open 
-
 			CString sPath = pDoc->GetPathName();
 			AfxGetApp()->AddToRecentFileList(sPath);
 			if (sPath.Right(1) != "\\") {
@@ -215,12 +212,11 @@ void CMediaPlayerView::OnWarning(long WarningType, long Param, LPCTSTR Descripti
 
 void CMediaPlayerView::OnPositionChange(double oldPosition, double newPosition) 
 {
+
 }
 
 void CMediaPlayerView::OnReadyStateChange(long ReadyState) 
 {
-	// TODO: Add your control notification handler code here
-	
 }
 
 

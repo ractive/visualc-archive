@@ -79,7 +79,10 @@ void CNFOViewerView::OnDraw(CDC* pDC)
 
 	pDC->SelectObject(m_hTerminalFont);
 
-	RECT rt;
+	RECT rt, cRect;
+	GetClientRect(&cRect);
+	cRect.bottom = __max(pDoc->m_TextSize.cy, cRect.bottom);
+	pDC->FillSolidRect(&cRect, m_bkColor);
 
 	pDC->SetTextColor(m_textColor);
 
@@ -87,7 +90,6 @@ void CNFOViewerView::OnDraw(CDC* pDC)
 	rt.left = 0;
 	rt.bottom = pDoc->m_TextSize.cy;
 	rt.right = pDoc->m_TextSize.cx;
-	pDC->FillSolidRect(&rt, m_bkColor);
 	pDC->DrawText(pDoc->m_sNFOContent, -1, &rt, DT_LEFT);
 }
 
@@ -145,13 +147,13 @@ void CNFOViewerView::FitWindow()
 	m_nLines = 0;
 	while (sTemp = strpbrk(s, "\n")) {
 		int chars = sTemp - s;
-		nMaxWidth = __max(nMaxWidth, chars * tm.tmAveCharWidth);
+		nMaxWidth = __max(nMaxWidth, chars * tm.tmMaxCharWidth);
 		s = sTemp + 1;
 		m_nLines++;
 	}
 
 	m_nLines++;
-	nMaxWidth++;
+	nMaxWidth+=10;
 
 	m_nLineHeight = tm.tmHeight + tm.tmExternalLeading;
 	pDoc->m_TextSize.cx = nMaxWidth;
@@ -160,8 +162,8 @@ void CNFOViewerView::FitWindow()
 	SetScrollSizes(MM_TEXT, pDoc->m_TextSize);
 	pDC->SetBkMode(TRANSPARENT);
 	
-	GetParentFrame()->RecalcLayout();
-	ResizeParentToFit(FALSE);
+	//GetParentFrame()->RecalcLayout();
+	//ResizeParentToFit(FALSE);
 }
 
 void CNFOViewerView::OnUpdate(CView* pSender, LPARAM lHint, CObject* pHint) 

@@ -72,7 +72,7 @@ BEGIN
         MENUITEM "XMLite",                      ID_XMLite
         MENUITEM "XML (Pug)",                   ID_XMLPUG
         MENUITEM "XML (Expat)",                 ID_EXPAT
-        MENUITEM "XML-RPC",                     ID_XMLRPC, GRAYED
+        MENUITEM "XML-RPC",                     ID_METHODE_XMLRPC, GRAYED
     END
     POPUP "&Ansicht"
     BEGIN

@@ -1,0 +1,588 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// German (Germany) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+#ifdef _WIN32
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\MyIPWinClient.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SETTINGS DIALOGEX 0, 0, 258, 212
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Settings"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "Store user name",IDC_STOREUSER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,16,16,70,10
+    CONTROL         "Store password",IDC_STOREPASS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,106,16,70,10
+    CONTROL         "Minimize at startup",IDC_MINIMIZE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,16,30,74,10
+    CONTROL         "Add to tray",IDC_ADDTOTRAY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,106,30,50,10
+    CONTROL         "Use Port 18080",IDC_PORT18080,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,107,59,65,10
+    CONTROL         "Update automatically when connection is detected",
+                    IDC_AUTOUPDATE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,
+                    102,175,10
+    CONTROL         "I'm connected via Modem/ISDN",IDC_MODEMCONN,"Button",
+                    BS_AUTORADIOBUTTON,24,127,118,10
+    CONTROL         "I'm connected via LAN (or otherwise)",IDC_LANCONN,
+                    "Button",BS_AUTORADIOBUTTON,24,151,182,10
+    DEFPUSHBUTTON   "OK",IDOK,56,191,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,150,191,50,14
+    GROUPBOX        "General settings ",IDC_STATIC,7,3,242,74,0,
+                    WS_EX_DLGMODALFRAME
+    GROUPBOX        "Auto update",IDC_STATIC,7,86,244,97,0,
+                    WS_EX_DLGMODALFRAME
+    LTEXT           "(using the default Dial-Up Network of Windows)",
+                    IDC_MODEMTEXT,35,139,175,8
+    LTEXT           "(NOT using the default Dial-Up Network of Windows)",
+                    IDC_LANTEXT,36,163,175,8
+    GROUPBOX        "Connection type",IDC_CONNECTIONTYPE,16,118,224,59
+    CONTROL         "Always send local IP",IDC_ALWGETIP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,16,44,81,10
+    CONTROL         "Warn when no change",IDC_WARN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,106,44,118,10
+END
+
+IDD_ABOUTDLG DIALOG DISCARDABLE  0, 0, 192, 102
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,135,81,50,14
+    LTEXT           "Windows client for",IDC_STATIC,7,7,67,10
+    LTEXT           "Version 3.41\r\n13. August 2001",IDC_STATIC,7,20,91,19
+    ICON            IDR_MAINFRAME,IDC_STATIC,155,17,20,20
+    LTEXT           "(c) by Jean-Pierre Bergamin\nmyipwinclient@ractive.ch\r\nThis software is licensed under the GPL",
+                    IDC_MAIL,7,44,135,27
+    LTEXT           "For further updates, please visit:",IDC_STATIC,7,76,101,
+                    8
+    LTEXT           "http://myipclient.cjb.net",IDC_MYIPCLIENT,7,87,76,8
+    LTEXT           "www.myip.org",IDC_MYIPORG,72,7,45,8
+END
+
+IDD_MXTIPS DIALOG DISCARDABLE  0, 0, 221, 159
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Tips for the MX-Record"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,83,138,50,14
+    LTEXT           "Using the MX-Record:",IDC_STATIC,14,7,71,8
+    LTEXT           "You can use the MX-Record to forward mail to the machine xyz.myip.org.\nYou must be able to configure this machine so that It accepts mail for the domain myip.org.\n\nAn Example:",
+                    IDC_STATIC,14,22,191,52
+    LTEXT           "If you put myip.org in the MX-Record, all mail that is sent to name@xyz.myip.org is then ""forwarded"" to the mail-box of the user ""name"" on the machine xzy.myip.org and can be read like any other mail.",
+                    IDC_STATIC,14,74,191,37
+    LTEXT           "This way you can send me i.e. mail to mail@james.myip.org",
+                    IDC_STATIC,14,112,186,8
+    GROUPBOX        "",IDC_STATIC,7,0,207,128
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_SETTINGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 251
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 205
+    END
+
+    IDD_ABOUTDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 185
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 95
+    END
+
+    IDD_MXTIPS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 214
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 152
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_OPEN                 "Open the dialogbox.\nOpen"
+    ID_EXIT                 "Exit the application.\nExit"
+    ID_RESTORE              "Restore the dialog.\nRestore"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDOK                    "Update you account.\nUpdate"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDR_TRAYNOTUPDATED      "MyIP WinClient not updated"
+    IDR_TRAY                "MyIP WinClient updated"
+END
+
+#endif    // German (Germany) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MYIPWINCLIENT_DIALOG DIALOGEX 0, 0, 283, 86
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "MyIP WinClient"
+MENU IDR_MAINMENU
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_USERNAME,67,10,123,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PASSWORD,67,26,123,12,ES_PASSWORD | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "&Update",IDC_UPDATE,208,18,68,14
+    LTEXT           "Username:",IDC_STATIC,15,12,35,8
+    GROUPBOX        "",IDC_STATIC,7,0,191,78
+    CONTROL         132,IDC_MYIPLOGO,"Static",SS_BITMAP,223,3,53,11
+    PUSHBUTTON      "&Configuration...",ID_SETTINGS,208,52,68,14
+    LTEXT           "www.myip.org",IDC_MYIPORG,222,71,45,8
+    COMBOBOX        IDC_HOSTS,67,42,123,61,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Hosts:",IDC_HOSTBUTTON,14,42,45,12,BS_LEFT | BS_FLAT
+    PUSHBUTTON      "Password:",IDC_PASSBUTTON,13,26,45,12,BS_LEFT | BS_FLAT
+    COMBOBOX        IDC_IPS,67,58,123,61,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Local IPs:",IDC_GETIP,14,58,45,12,BS_LEFT | BS_FLAT
+    PUSHBUTTON      "Advanced Update",ID_ADVUPDATE,208,35,68,14
+END
+
+IDD_HOSTS DIALOG DISCARDABLE  0, 0, 192, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Host management"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,135,58,50,14
+    COMBOBOX        IDC_HOSTS,13,13,108,63,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Add new host",IDC_NEW,125,38,50,12
+    PUSHBUTTON      "Delete host",IDC_DEL,125,13,50,12
+    EDITTEXT        IDC_NEWHOSTNAME,13,38,108,12,ES_AUTOHSCROLL
+    GROUPBOX        "",IDC_STATIC,7,4,173,26
+    GROUPBOX        "",IDC_STATIC,7,29,173,26
+    PUSHBUTTON      "Import from myip.org",IDC_IMPORT,7,58,85,14
+END
+
+IDD_NEWPWD DIALOG DISCARDABLE  0, 0, 179, 82
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Change Password"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_NEWPWD,93,15,74,14,ES_PASSWORD | ES_AUTOHSCROLL
+    EDITTEXT        IDC_NEWPWD2,93,34,74,14,ES_PASSWORD | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,28,61,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,101,61,50,14
+    LTEXT           "New password:",IDC_STATIC,12,18,50,8
+    LTEXT           "Confirm new password:",IDC_STATIC,12,37,74,8
+    GROUPBOX        "",IDC_STATIC,7,7,165,49
+END
+
+IDD_IPLIST DIALOGEX 0, 0, 212, 207
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Close",IDOK,132,186,63,14
+    CONTROL         "List2",IDC_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | LVS_EDITLABELS | WS_BORDER | 
+                    WS_TABSTOP,7,34,198,116
+    PUSHBUTTON      "Update entry",IDC_UPDATE,132,162,63,14
+    COMBOBOX        IDC_RECORDTYPE,67,162,48,47,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Record Type:",IDC_STATIC,15,164,44,8
+    LTEXT           "Select an entry, change the IP address, choose the record type (normally ""A"") and hit ""Update Entry"".",
+                    IDC_STATIC,7,7,198,24,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "Import settings",IDC_IMPORT,15,186,63,14
+    GROUPBOX        "",IDC_STATIC,7,153,198,27
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_MYIPWINCLIENT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 276
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 79
+    END
+
+    IDD_HOSTS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 185
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 72
+    END
+
+    IDD_NEWPWD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 172
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 75
+    END
+
+    IDD_IPLIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 205
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 200
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\MyIPWinClient.ico"
+IDR_TRAYNOTUPDATED      ICON    DISCARDABLE     "res\\TrayNot.ico"
+IDR_TRAY                ICON    DISCARDABLE     "res\\MyIPWinClient.ico"
+IDI_ANIM1               ICON    DISCARDABLE     "res\\anim1.ico"
+IDI_ANIM2               ICON    DISCARDABLE     "res\\anim2.ico"
+IDI_ANIM5               ICON    DISCARDABLE     "res\\anim3.ico"
+IDI_ANIM6               ICON    DISCARDABLE     "res\\anim4.ico"
+IDI_ANIM3               ICON    DISCARDABLE     "res\\anim5.ico"
+IDI_ANIM4               ICON    DISCARDABLE     "res\\ico00001.ico"
+IDI_ANIM7               ICON    DISCARDABLE     "res\\anim7.ico"
+IDI_ANIM8               ICON    DISCARDABLE     "res\\ico00002.ico"
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "MyIPWinClient MFC Application\0"
+            VALUE "FileVersion", "3.4\0"
+            VALUE "InternalName", "MyIPWinClient\0"
+            VALUE "LegalCopyright", "Copyright (C) 2000 by Jean-Pierre Bergamin\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "MyIPWinClient.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "MyIPWinClient Application\0"
+            VALUE "ProductVersion", "3.4\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_MYIPLOGO            BITMAP  DISCARDABLE     "res\\myip.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_TRAY MENU DISCARDABLE 
+BEGIN
+    POPUP "TrayMenu"
+    BEGIN
+        MENUITEM "&Restore",                    ID_RESTORE
+        MENUITEM "&Update Account",             IDC_UPDATE
+        MENUITEM "&Exit",                       ID_EXIT
+        MENUITEM "&About...",                   ID_ABOUT
+    END
+END
+
+IDR_MAINMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&Action"
+    BEGIN
+        MENUITEM "&Update Host",                IDC_UPDATE
+        MENUITEM "Advanded Update...",          ID_ADVUPDATE
+        MENUITEM "Manage your hosts...",        IDC_HOSTBUTTON
+        MENUITEM "Change your password...",     IDC_PASSBUTTON
+        MENUITEM SEPARATOR
+        MENUITEM "&Create new account...",      ID_CREATENEW
+        MENUITEM "&Delete account...",          ID_DELETEACC
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_EXIT
+    END
+    MENUITEM "&Settings",                   ID_SETTINGS
+    MENUITEM "About...",                    ID_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_IPLIST DLGINIT
+BEGIN
+    IDC_RECORDTYPE, 0x403, 2, 0
+0x0041, 
+    IDC_RECORDTYPE, 0x403, 3, 0
+0x534e, "\000" 
+    IDC_RECORDTYPE, 0x403, 3, 0
+0x584d, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_TRAYMENU_ABOUT       "About.\nAbout"
+    ID_ABOUT                "About\nAbout"
+    ID_DELETEACC            "Delete the account at www.myip.org"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// German (Switzerland) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DES)
+#ifdef _WIN32
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN_SWISS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_UPDATEDLG DIALOGEX 0, 0, 147, 28
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE
+EXSTYLE WS_EX_TOOLWINDOW
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CTEXT           "Updating account",IDC_TEXT,35,10,105,8
+    ICON            IDR_MAINFRAME,IDC_STATIC,4,4,20,20
+END
+
+IDD_WELCOME DIALOG DISCARDABLE  0, 0, 210, 129
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Welcome to the MyIPWinClient"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "This is the first time you started the MyIPWinClient.",
+                    IDC_STATIC,7,16,159,8
+    LTEXT           "The MyIPWinClient let's you easily create and update your account at",
+                    IDC_STATIC,7,30,196,17
+    LTEXT           "http://www.myip.org",IDC_MYIP,7,50,66,8
+    LTEXT           "What would you like to do:",IDC_STATIC,7,65,85,8
+    PUSHBUTTON      "Create a new account...",IDOK,24,78,161,14,BS_LEFT | 
+                    BS_FLAT
+    PUSHBUTTON      "Let me in, I already have an account...",IDCANCEL,24,99,
+                    161,14,BS_LEFT | BS_FLAT
+END
+
+IDD_CREATEDLG DIALOG DISCARDABLE  0, 0, 216, 141
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Create new account"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_USERNAME,71,30,123,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PASSWORD,71,46,123,12,ES_PASSWORD | ES_AUTOHSCROLL
+    EDITTEXT        IDC_PASSWORD2,71,62,123,12,ES_PASSWORD | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EMAIL,71,78,123,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "&Create",IDOK,43,115,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,121,115,50,14
+    LTEXT           "Username:",IDC_STATIC,19,32,35,8
+    LTEXT           "Password:",IDC_STATIC,19,48,34,8
+    LTEXT           "E-Mail:",IDC_STATIC,19,81,22,8
+    LTEXT           "This will create a new account at www.myip.org",
+                    IDC_STATIC,7,7,202,13,WS_BORDER
+    GROUPBOX        "",IDC_STATIC,7,21,202,82
+    LTEXT           "Confirm\r\npassword",IDC_STATIC,19,60,46,16
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_WELCOME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 203
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 122
+    END
+
+    IDD_CREATEDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 209
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 134
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // German (Switzerland) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\MyIPWinClient.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -28,6 +28,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #include <lm.h>
 #include "MultipleRecipientsDlg.h"
 #include "OptionsDlg.h"
+#include "HostsFile.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -104,6 +105,7 @@ CNTMessengerDlg::CNTMessengerDlg(CWnd* pParent /*=NULL*/)
 	rb.Bind(m_nMinutes, _T("Rescan Interval"), 1);
 	rb.Bind(m_sPDC, _T("Domain Controller"), TEXT(""));
 	rb.Bind(m_sDomain, _T("Domain"), TEXT(""));
+	rb.Bind(m_bOnlyWorkstations, _T("OnlyWorksations"), FALSE);
 }
 
 CNTMessengerDlg::~CNTMessengerDlg()
@@ -310,8 +312,18 @@ bool CNTMessengerDlg::FillServerCombo()
 
 	// Get all the "servers" in the network
 	NET_API_STATUS nas;
+
+	DWORD dwServerType = 0;
+
+	if (m_bOnlyWorkstations) {
+		dwServerType = SV_TYPE_WORKSTATION;
+	}
+	else {
+		dwServerType = SV_TYPE_ALL;
+	}
+
 	do {
-		nas = NetServerEnum (m_sPDC, 100, (LPBYTE*)&pSI_100, sizeof(SERVER_INFO_100) * 20, &dwEntriesRead, &dwTotalEntries, SV_TYPE_ALL, psDomain, 0);
+		nas = NetServerEnum (m_sPDC, 100, (LPBYTE*)&pSI_100, sizeof(SERVER_INFO_100) * 20, &dwEntriesRead, &dwTotalEntries, dwServerType, psDomain, 0);
 		
 
 		if ((nas == NERR_Success || nas == ERROR_MORE_DATA ) && pSI_100 != NULL ) {
@@ -320,7 +332,7 @@ bool CNTMessengerDlg::FillServerCombo()
 			for (DWORD i = 0; i < dwEntriesRead; i++) {
 				CString sName = (LPWSTR)pSI_100[i].sv100_name;
 				saServer.Add(sName);
-				m_ServerCombo.AddString(sName);
+				//m_ServerCombo.AddString(sName);
 			}
 			NetApiBufferFree (pSI_100);
 		}
@@ -337,31 +349,37 @@ bool CNTMessengerDlg::FillServerCombo()
 			MessageBox(sMsg, TEXT("Network browsing error"), MB_OK | MB_ICONEXCLAMATION);
 		}
 
-		if (dwEntriesRead > 0) {
-			// Don't select the first entry if our PC is the first one, we select the second one if this is possible.
-			CString sMyPC;
-			nas = NetServerGetInfo(NULL, 100, (LPBYTE*)&pSI_100);
-			if (nas == NERR_Success) {
-				sMyPC = (LPWSTR)pSI_100->sv100_name;
-				NetApiBufferFree (pSI_100);
-			}
-
-			CString sPC;
-			m_ServerCombo.GetLBText(0, sPC);
-			if ((m_ServerCombo.GetCount() > 1) && (sPC == sMyPC)) {
-				m_ServerCombo.SetCurSel(1);
-			}
-			else {
-				m_ServerCombo.SetCurSel(0);
-			}
-		}
-		
-		else {
-			ErrorMsg(_T("No computers found on the network."));
-			return false;
-		}
-
 	} while(nas == ERROR_MORE_DATA );
+
+	CHostsFile hosts;
+	hosts.GetHostArray(&saServer);
+	
+	int nSize = saServer.GetSize();
+
+	for (int i = 0; i < nSize; i++) {
+		m_ServerCombo.AddString(saServer[i]);
+	}
+
+	if (saServer.GetSize() > 0) {
+		// Don't select the first entry if our PC is the first one, we select the second one if this is possible.
+		CString sMyPC;
+		nas = NetServerGetInfo(NULL, 100, (LPBYTE*)&pSI_100);
+		if (nas == NERR_Success) {
+			sMyPC = (LPWSTR)pSI_100->sv100_name;
+			NetApiBufferFree (pSI_100);
+		}
+
+		if ((m_ServerCombo.GetCount() > 1) && (saServer[0] == sMyPC)) {
+			m_ServerCombo.SetCurSel(1);
+		}
+		else {
+			m_ServerCombo.SetCurSel(0);
+		}
+	}
+	else {
+		ErrorMsg(_T("No computers found on the network."));
+		return false;
+	}
 
 	// Add the "To all" entry
 	m_ServerCombo.AddString(sAll);
@@ -606,7 +624,14 @@ void CNTMessengerDlg::OnOptions()
 	dlg.m_nMinutes = m_nMinutes;
 	dlg.m_sPDC = m_sPDC;
 	dlg.m_sDomain = m_sDomain;
+	dlg.m_bOnlyWorksations = m_bOnlyWorkstations;
+
 	if (dlg.DoModal() == IDOK) {
+		if (dlg.m_bRescanNow) {
+			FillServerCombo();
+		}
+		
+		m_bOnlyWorkstations = dlg.m_bOnlyWorksations;
 		m_bDeleteWhenSent = dlg.m_bDeleteWhenSent;
 		m_bStartMinimized = dlg.m_bStartMinimized;
 		m_bRescan = dlg.m_bRescan;

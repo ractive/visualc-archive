@@ -204,12 +204,12 @@ BEGIN
     PUSHBUTTON      "<--",IDC_REMOVE,98,71,17,14,BS_CENTER | BS_VCENTER
 END
 
-IDD_OPTIONSDLG DIALOG DISCARDABLE  0, 0, 160, 127
+IDD_OPTIONSDLG DIALOG DISCARDABLE  0, 0, 158, 191
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Preferences..."
 FONT 8, "MS Sans Serif"
 BEGIN
-    DEFPUSHBUTTON   "OK",IDOK,21,106,50,14
+    DEFPUSHBUTTON   "OK",IDOK,20,170,50,14
     CONTROL         "Start minimized",IDC_STARTMINIMIZED,"Button",
                     BS_AUTOCHECKBOX | WS_TABSTOP,7,7,63,10
     CONTROL         "Delete message when sent",IDC_DELETEWHENSENT,"Button",
@@ -221,11 +221,17 @@ BEGIN
                     UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,130,18,11,
                     14
     LTEXT           "min.",IDC_STATIC,134,40,14,8
-    PUSHBUTTON      "Cancel",IDCANCEL,88,106,50,14
-    LTEXT           "Domain Controller",IDC_STATIC,7,61,56,8
-    EDITTEXT        IDC_PDC,67,58,76,14,ES_AUTOHSCROLL
-    LTEXT           "Domain to scan",IDC_STATIC,7,79,50,8
-    EDITTEXT        IDC_DOMAIN,67,76,76,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Cancel",IDCANCEL,87,170,50,14
+    LTEXT           "Domain Controller",IDC_STATIC,7,88,56,8
+    EDITTEXT        IDC_PDC,67,85,76,14,ES_AUTOHSCROLL
+    LTEXT           "Domain to scan",IDC_STATIC,7,106,50,8
+    EDITTEXT        IDC_DOMAIN,67,103,76,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Rescan Network now!",IDC_RESCANNOW,32,57,94,14
+    GROUPBOX        "Computers that will be shown",IDC_STATIC,7,124,140,41
+    CONTROL         "Only Workstations",IDC_ONLYWORKSTATIONS,"Button",
+                    BS_AUTORADIOBUTTON,14,136,118,10
+    CONTROL         "All Computers",IDC_ALLPCS,"Button",BS_AUTORADIOBUTTON,
+                    14,150,59,10
 END
 
 
@@ -248,9 +254,9 @@ BEGIN
     IDD_OPTIONSDLG, DIALOG
     BEGIN
         LEFTMARGIN, 7
-        RIGHTMARGIN, 153
+        RIGHTMARGIN, 151
         TOPMARGIN, 7
-        BOTTOMMARGIN, 120
+        BOTTOMMARGIN, 184
     END
 END
 #endif    // APSTUDIO_INVOKED

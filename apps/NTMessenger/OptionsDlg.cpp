@@ -48,6 +48,8 @@ COptionsDlg::COptionsDlg(CWnd* pParent /*=NULL*/)
 	m_sPDC = _T("");
 	m_sDomain = _T("");
 	//}}AFX_DATA_INIT
+
+	m_bOnlyWorksations = FALSE;
 }
 
 
@@ -69,6 +71,9 @@ void COptionsDlg::DoDataExchange(CDataExchange* pDX)
 BEGIN_MESSAGE_MAP(COptionsDlg, CDialog)
 	//{{AFX_MSG_MAP(COptionsDlg)
 	ON_BN_CLICKED(IDC_RESCAN, OnRescan)
+	ON_BN_CLICKED(IDC_RESCANNOW, OnRescanNow)
+	ON_BN_CLICKED(IDC_ONLYWORKSTATIONS, OnOnlyWorkstations)
+	ON_BN_CLICKED(IDC_ALLPCS, OnAllPCs)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -96,7 +101,33 @@ BOOL COptionsDlg::OnInitDialog()
 	
 	OnRescan();
 	
+	if (m_bOnlyWorksations) {
+		((CButton *)GetDlgItem(IDC_ONLYWORKSTATIONS))->SetCheck(1);
+	}
+	else {
+		((CButton *)GetDlgItem(IDC_ALLPCS))->SetCheck(1);
+	
+	}
+
 	return TRUE;  // return TRUE unless you set the focus to a control
 	              // EXCEPTION: OCX Property Pages should return FALSE
 }
 
+
+void COptionsDlg::OnRescanNow() 
+{
+	m_bRescanNow = TRUE;
+	EndDialog(IDOK);
+}
+
+void COptionsDlg::OnOnlyWorkstations() 
+{
+	m_bOnlyWorksations = TRUE;
+	m_bRescanNow = TRUE;
+}
+
+void COptionsDlg::OnAllPCs() 
+{
+	m_bOnlyWorksations = FALSE;	
+	m_bRescanNow = TRUE;
+}

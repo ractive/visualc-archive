@@ -36,6 +36,8 @@ class COptionsDlg : public CDialog
 {
 // Construction
 public:
+	BOOL m_bOnlyWorksations;
+	BOOL m_bRescanNow;
 	COptionsDlg(CWnd* pParent = NULL);   // standard constructor
 
 // Dialog Data
@@ -64,6 +66,9 @@ protected:
 	//{{AFX_MSG(COptionsDlg)
 	afx_msg void OnRescan();
 	virtual BOOL OnInitDialog();
+	afx_msg void OnRescanNow();
+	afx_msg void OnOnlyWorkstations();
+	afx_msg void OnAllPCs();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

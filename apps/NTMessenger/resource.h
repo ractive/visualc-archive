@@ -26,13 +26,17 @@
 #define IDC_MINUTES                     1008
 #define IDC_SPIN1                       1009
 #define IDC_BUTTON1                     1010
+#define IDC_RESCANNOW                   1010
 #define IDC_NAME                        1011
 #define IDC_PDC                         1011
 #define IDC_MULTIPLE                    1012
 #define IDC_DOMAIN                      1012
 #define IDC_RECIPIENTS                  1013
+#define IDC_ONLYWORKSTATIONS            1013
 #define IDC_SERVERS                     1014
+#define IDC_ALLPCS                      1014
 #define IDC_ADD                         1015
+#define IDC_WKSTANDSERVERS              1015
 #define IDC_REMOVE                      1016
 #define ID_RESTORE                      32773
 
@@ -42,7 +46,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        136
 #define _APS_NEXT_COMMAND_VALUE         32772
-#define _APS_NEXT_CONTROL_VALUE         1013
+#define _APS_NEXT_CONTROL_VALUE         1016
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

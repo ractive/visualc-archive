@@ -60,6 +60,8 @@ public:
 	int m_nMinutes;
 	CString m_sPDC;
 	CString m_sDomain;
+	BOOL m_bOnlyWorkstations;
+
 	CRegBinding rb;
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CNTMessengerDlg)

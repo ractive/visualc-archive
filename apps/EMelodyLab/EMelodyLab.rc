@@ -1,0 +1,393 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// German (Germany) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+#ifdef _WIN32
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 420, 295
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Info über EMelodyLab"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,10,20,20
+    LTEXT           "EMelodyLab Version 1.3",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2001 by J.P. Bergamin",IDC_STATIC,40,22,
+                    119,8
+    DEFPUSHBUTTON   "OK",IDOK,362,9,50,14,WS_GROUP
+    LTEXT           "What's that:\r\n================\r\nUse this program to compose your EMELODY ringtone! The produced rintones are EMS standard,\r\nbut (as far as I know) only supported by Ericsson phones at the moment!\r\n\r\nCompose your ringtone and save it!",
+                    IDC_STATIC,7,53,406,51
+    LTEXT           " Open Windows-Explorer, right-click on the file and choose\r\n""Send to - Infrared receiver"". The ringtone should be transferred to your phone!\r\n\r\nAbout the program:\r\n================\r\nValid tones are:",
+                    IDC_STATIC,7,106,406,49
+    LTEXT           "Uppercase letters mean a long tone (i.e. #C). A point after a tone makes it longer\r\n A ""+"" in front of a tone means one octave higher, ""++"" two octaves  (i.e. ""+(b)E"")\r\nUse ""p"" for a pause.\r\nFor a detailed description see:",
+                    IDC_STATIC,7,182,406,35
+    LTEXT           "http://www.mobileems.com/ems2.pdf",IDC_WHITEPAPERURL,7,
+                    219,406,8
+    LTEXT           "If you hit ""Play"", the tone starts playing at the current cursor position!!!! Select a part to only play this part!\r\n\r\nIf you check ""Play when changing cursor"" you hear any subsequent tone if you use the right-arrow to move the\r\ncursor within the melody.",
+                    IDC_STATIC,7,232,406,34
+    LTEXT           "If you have questions or other ideas, write me to:",
+                    IDC_STATIC,7,267,153,8
+    LTEXT           "mailto:james@ractive.ch",IDC_MAIL,7,279,78,8
+    LTEXT           "http://www.ractive.ch/gpl/EMelodyLab.html",IDC_URL,40,
+                    33,141,8
+    GROUPBOX        "",IDC_STATIC,2,0,416,291
+    LTEXT           "c d e f g a b\r\n(b)d (b)e (b)g (b)a (b)b\r\n#d #e #g #a #b",
+                    IDC_STATIC,7,154,184,25
+END
+
+IDD_EMELODYLAB_DIALOG DIALOGEX 0, 0, 320, 106
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "EMelodyLab"
+MENU IDR_MAINFRAME
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_MELODY,36,10,277,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SPEED,36,45,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    DEFPUSHBUTTON   "Play",IDC_PLAY,209,45,50,14
+    PUSHBUTTON      "Stop",IDC_STOP,263,45,50,14,WS_DISABLED
+    PUSHBUTTON      "Open...",IDC_OPEN,7,73,50,14
+    PUSHBUTTON      "Save",IDC_SAVE,67,73,50,14
+    PUSHBUTTON      "Close",IDOK,263,73,50,14
+    LTEXT           "Melody:",IDC_STATIC,7,12,26,8
+    LTEXT           "Speed:",IDC_STATIC,7,49,24,8
+    LTEXT           "Beats per minute",IDC_STATIC,80,49,54,8
+    LTEXT           "",IDC_AVAILABLE,158,29,155,12,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    GROUPBOX        "",IDC_STATIC,3,0,314,65
+    CONTROL         "Play when changing cursor (->)",IDC_PLAYRIGHT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,36,28,113,10
+    CONTROL         "Loop",IDC_LOOP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    158,47,32,10
+    ICON            IDR_MAINFRAME,IDC_STATIC,7,26,20,20
+    GROUPBOX        "",IDC_STATIC,3,66,314,25
+    PUSHBUTTON      "<",IDC_REWIND,193,45,12,14
+    LTEXT           "Please upload your ringtones to:",IDC_STATIC,7,94,102,8
+    LTEXT           "http://www.ractive.ch/t68/ringtones.php",IDC_UPLOADURL,
+                    114,94,199,8
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,3
+ PRODUCTVERSION 1,0,0,3
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040704b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "MFC-Anwendung EMelodyLab\0"
+            VALUE "FileVersion", "1, 0, 0, 3\0"
+            VALUE "InternalName", "EMelodyLab\0"
+            VALUE "LegalCopyright", "Copyright (C) 2001\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "EMelodyLab.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "Anwendung EMelodyLab\0"
+            VALUE "ProductVersion", "1, 0, 0, 3\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x407, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 413
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 291
+    END
+
+    IDD_EMELODYLAB_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 313
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 102
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "Inf&o über EMelodyLab..."
+END
+
+#endif    // German (Germany) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New",                        IDC_NEW
+        MENUITEM "&Open...",                    IDC_OPEN
+        MENUITEM "&Save",                       IDC_SAVE
+        MENUITEM "Save &as...",                 IDC_SAVEAS
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "Melody"
+    BEGIN
+        MENUITEM "&Play",                       IDC_PLAY
+        MENUITEM "&Stop",                       IDC_STOP
+        MENUITEM SEPARATOR
+        MENUITEM "&Clear Melody",               IDC_CLEAR
+    END
+    POPUP "Help"
+    BEGIN
+        MENUITEM "&About...",                   ID_HELP
+        MENUITEM "&Links...",                   ID_LINKS
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_OPEN            "Open an EMELODY file.\nOpen file"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_PLAY                "Play melody\nPlay"
+    IDC_STOP                "Stop\nStop"
+    IDC_OPEN                "Open an EMELODY file\nOpen file..."
+    IDC_SAVE                "Save the EMELODY\nSave"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_SAVEAS              "Save the EMELODY file as...\nSave as..."
+    IDC_CLEAR               "Clear the melody\nClear"
+    IDC_NEW                 "New melody\nNew melody"
+    ID_LINKS                "Links with ringtones\nLinks"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_EXIT             "Exit\nExit"
+    ID_HELP                 "Help\nHelp"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// German (Switzerland) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DES)
+#ifdef _WIN32
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN_SWISS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_LINKSDLG DIALOG DISCARDABLE  0, 0, 212, 166
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Ringtone links"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,155,7,50,14
+    LTEXT           "Free ringtones",IDC_STATIC,7,7,46,8
+    LTEXT           "Copy and paste a ringtones from these sites into EMelodyLab\r\nand save it:",
+                    IDC_STATIC,7,30,198,17
+    LTEXT           "http://www.ericssontones.com/melodies.htm",
+                    IDC_ERICSSONTONESURL,7,50,142,8
+    LTEXT           "http://www.ericsson.mobilehits.com",IDC_MOBILEHITSURL,7,
+                    62,114,8
+    LTEXT           "Do you know more? Tell me:",IDC_STATIC,7,111,91,8
+    LTEXT           "mailto:james@ractive.ch",IDC_MAILURL,7,122,78,8
+    ICON            IDR_MAINFRAME,IDC_STATIC,184,139,21,20
+    LTEXT           "http://emelody.cjb.net/",IDC_EMELODYURL,7,75,74,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_LINKSDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 205
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 159
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 7, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\EMelodyLab.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.deu\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\EMelodyLab.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACCELERATOR1 ACCELERATORS DISCARDABLE 
+BEGIN
+    "N",            IDC_NEW,                VIRTKEY, CONTROL, NOINVERT
+    "O",            IDC_OPEN,               VIRTKEY, CONTROL, NOINVERT
+    "S",            IDC_SAVE,               VIRTKEY, CONTROL, NOINVERT
+END
+
+#endif    // German (Switzerland) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+#ifdef _WIN32
+LANGUAGE 7, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\EMelodyLab.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.deu\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -270,7 +270,7 @@ BOOL CBluessonDlg::OnInitDialog()
 	int nEntry = 0;
 
 	// Fill the COM-Port drop down list
-	for (int i = 1; i <= 8; i++) {
+	for (int i = 1; i <= 16; i++) {
 		CString sPort;
 		sPort.Format("COM %d", i);
 		int nAdded = m_ComPortCtrl.AddString(sPort);

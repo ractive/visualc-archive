@@ -1,0 +1,70 @@
+// PlayToneX.odl : type library source for ActiveX Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (PlayToneX.tlb) that will become a resource in
+// PlayToneX.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(E3842DFB-6F75-4AA3-BA25-E42CE39B428C), version(1.0),
+  helpfile("PlayToneX.hlp"),
+  helpstring("PlayToneX ActiveX Control module"),
+  control ]
+library PLAYTONEXLib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CPlayToneXCtrl
+
+	[ uuid(1268762E-AD7D-43DE-959F-CC434DB87142),
+	  helpstring("Dispatch interface for PlayToneX Control"), hidden ]
+	dispinterface _DPlayToneX
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CPlayToneXCtrl)
+			[id(DISPID_BACKCOLOR), bindable, requestedit] OLE_COLOR BackColor;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CPlayToneXCtrl)
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CPlayToneXCtrl
+
+	[ uuid(5CD185B8-D1BD-4CAA-983B-B5191BEA8AE4),
+	  helpstring("Event interface for PlayToneX Control") ]
+	dispinterface _DPlayToneXEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CPlayToneXCtrl)
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CPlayToneXCtrl
+
+	[ uuid(DFBAEE2C-2669-489E-832E-7FBF9F771C35),
+	  helpstring("PlayToneX Control"), control ]
+	coclass PlayToneX
+	{
+		[default] dispinterface _DPlayToneX;
+		[default, source] dispinterface _DPlayToneXEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

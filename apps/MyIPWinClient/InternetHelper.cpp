@@ -355,14 +355,16 @@ void CInternetHelper::ReadURL(LPCTSTR sURL, CString &sBuf)
 	StatusCallback = &(dlg.UpdateDlg);
 	StatusCallback(0, NULL, 0);
 
-	CWinThread * pThread = AfxBeginThread(ReadURLThreadProc, &readInfo, 0, CREATE_SUSPENDED, NULL);
+	CWinThread * pThread = NULL;
+	pThread = AfxBeginThread(ReadURLThreadProc, &readInfo, THREAD_PRIORITY_NORMAL, 0, CREATE_SUSPENDED, NULL);
+
 	pThread->m_bAutoDelete = false;
 	pThread->ResumeThread();
 
 	// Hmm, not sure but here could occur a "deadlock". If the Window gets not messages
 	// any more and we call Pump at the wrong time, Pump will wait will a new
 	// message arrives. Very unlikely, but possible.
-	while (WaitForSingleObject(pThread->m_hThread, 5) != WAIT_OBJECT_0) {
+	while (WaitForSingleObject(pThread->m_hThread, 150) != WAIT_OBJECT_0) {
 		dlg.Pump();
 	}
 

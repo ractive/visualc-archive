@@ -306,7 +306,7 @@ void CMyIPWinClientDlg::OnDestroy()
 
 	CInternetHelper::Destroy();
 
-	CDialog::OnClose();
+	CDialog::OnDestroy();
 	
 }
 

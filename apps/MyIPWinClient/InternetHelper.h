@@ -70,6 +70,7 @@ public:
 	static CInternetHelper * Instance();
 protected:
 	CInternetHelper();
+	static CInternetHelper * m_pInstance;
 private:
 	CString Decode_Resp(char * buf, int bytes, struct sockaddr_in * from);
 	USHORT Checksum(USHORT * buffer, int size);
@@ -82,7 +83,6 @@ private:
 	HWND hNotificationWnd;
 	static CRITICAL_SECTION csNotificationWnd;
 	CWinThread * m_pRasDaemon;
-	static CInternetHelper * m_pInstance;
 	static UINT RASDaemon(LPVOID pInfo);
 	static UINT ReadURLThreadProc(LPVOID pInfo);
 	virtual void OnStatusCallback(DWORD dwContext, DWORD dwInternetStatus, LPVOID lpvStatusInformation, DWORD dwStatusInformationLength);

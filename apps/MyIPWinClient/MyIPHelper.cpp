@@ -98,7 +98,13 @@ BOOL CMyIPHelper::UpdateAccount(CString &sUsername, CString &sPassword, CString 
 
 CMyIPHelper * CMyIPHelper::Instance()
 {
-	return (CMyIPHelper *)CInternetHelper::Instance();
+	// If we don't have an instance yet, create a new one.
+	if (m_pInstance == 0) {
+		m_pInstance = new CMyIPHelper;
+	}
+	
+	// Return the (one and only) instance
+	return (CMyIPHelper *)m_pInstance;
 }
 
 void CMyIPHelper::URLPointsTo(CString &sUsername)

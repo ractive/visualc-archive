@@ -1,0 +1,34 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {F20EF525-FE9E-4b19-9D56-CA1AA0638C1D} = s 'RCServer Class'
+		{
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+		}
+	}
+}
+HKEY_LOCAL_MACHINE
+{
+    NoRemove SOFTWARE
+    {
+        NoRemove Microsoft
+        {
+            NoRemove MediaPlayer
+            {
+                NoRemove UIPlugins
+                {
+                    ForceRemove {F20EF525-FE9E-4b19-9D56-CA1AA0638C1D}
+                    {
+                        val FriendlyName = s 'res://RCServer.dll/RT_STRING/#102'
+                        val Description = s 'res://RCServer.dll/RT_STRING/#103'
+                        val Capabilities = d '3758096385'
+                    }
+                }
+            }
+        }
+    }
+}

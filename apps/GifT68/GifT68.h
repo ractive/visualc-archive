@@ -1,8 +1,8 @@
 // GifT68.h : main header file for the GIFT68 application
 //
 
-#if !defined(AFX_GIFT68_H__B23EACC6_9BA1_4A1C_8C46_1A977C295C80__INCLUDED_)
-#define AFX_GIFT68_H__B23EACC6_9BA1_4A1C_8C46_1A977C295C80__INCLUDED_
+#if !defined(AFX_GIFT68_H__90EE7D4E_31B9_4F2C_8988_453C3D580AFC__INCLUDED_)
+#define AFX_GIFT68_H__90EE7D4E_31B9_4F2C_8988_453C3D580AFC__INCLUDED_
 
 #if _MSC_VER > 1000
 #pragma once
@@ -12,7 +12,7 @@
 	#error include 'stdafx.h' before including this file for PCH
 #endif
 
-#include "resource.h"		// main symbols
+#include "resource.h"       // main symbols
 
 /////////////////////////////////////////////////////////////////////////////
 // CGifT68App:
@@ -32,8 +32,8 @@ public:
 	//}}AFX_VIRTUAL
 
 // Implementation
-
 	//{{AFX_MSG(CGifT68App)
+	afx_msg void OnAppAbout();
 		// NOTE - the ClassWizard will add and remove member functions here.
 		//    DO NOT EDIT what you see in these blocks of generated code !
 	//}}AFX_MSG
@@ -46,4 +46,4 @@ public:
 //{{AFX_INSERT_LOCATION}}
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
-#endif // !defined(AFX_GIFT68_H__B23EACC6_9BA1_4A1C_8C46_1A977C295C80__INCLUDED_)
+#endif // !defined(AFX_GIFT68_H__90EE7D4E_31B9_4F2C_8988_453C3D580AFC__INCLUDED_)

@@ -66,8 +66,8 @@ LINK32=link.exe
 # PROP Output_Dir "Debug"
 # PROP Intermediate_Dir "Debug"
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /Yu"stdafx.h" /FD /GZ /c
-# ADD CPP /nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Yu"stdafx.h" /FD /GZ /c
+# ADD BASE CPP /nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /Yu"stdafx.h" /FD /GZ  /c
+# ADD CPP /nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Yu"stdafx.h" /FD /GZ   /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x807 /d "_DEBUG" /d "_AFXDLL"
@@ -90,10 +90,6 @@ LINK32=link.exe
 # PROP Default_Filter "cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
 # Begin Source File
 
-SOURCE=.\DirectoryPicker.cpp
-# End Source File
-# Begin Source File
-
 SOURCE=.\GifT68.cpp
 # End Source File
 # Begin Source File
@@ -102,11 +98,15 @@ SOURCE=.\GifT68.rc
 # End Source File
 # Begin Source File
 
-SOURCE=.\GifT68Dlg.cpp
+SOURCE=.\GifT68Doc.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\PicHolder.cpp
+SOURCE=.\GifT68View.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\MainFrm.cpp
 # End Source File
 # Begin Source File
 
@@ -123,19 +123,19 @@ SOURCE=.\StdAfx.cpp
 # PROP Default_Filter "h;hpp;hxx;hm;inl"
 # Begin Source File
 
-SOURCE=.\DirectoryPicker.h
-# End Source File
-# Begin Source File
-
 SOURCE=.\GifT68.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\GifT68Dlg.h
+SOURCE=.\GifT68Doc.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\PicHolder.h
+SOURCE=.\GifT68View.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\MainFrm.h
 # End Source File
 # Begin Source File
 
@@ -160,6 +160,14 @@ SOURCE=.\res\GifT68.ico
 # Begin Source File
 
 SOURCE=.\res\GifT68.rc2
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\GifT68Doc.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\Toolbar.bmp
 # End Source File
 # End Group
 # Begin Source File

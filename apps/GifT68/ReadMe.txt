@@ -47,16 +47,33 @@ res\GifT68.rc2
 
 
 
-
 /////////////////////////////////////////////////////////////////////////////
 
-AppWizard creates one dialog class:
+For the main frame window:
 
-GifT68Dlg.h, GifT68Dlg.cpp - the dialog
-    These files contain your CGifT68Dlg class.  This class defines
-    the behavior of your application's main dialog.  The dialog's
-    template is in GifT68.rc, which can be edited in Microsoft
-	Visual C++.
+MainFrm.h, MainFrm.cpp
+    These files contain the frame class CMainFrame, which is derived from
+    CFrameWnd and controls all SDI frame features.
+
+res\Toolbar.bmp
+    This bitmap file is used to create tiled images for the toolbar.
+    The initial toolbar and status bar are constructed in the CMainFrame
+    class. Edit this toolbar bitmap using the resource editor, and
+    update the IDR_MAINFRAME TOOLBAR array in GifT68.rc to add
+    toolbar buttons.
+/////////////////////////////////////////////////////////////////////////////
+
+AppWizard creates one document type and one view:
+
+GifT68Doc.h, GifT68Doc.cpp - the document
+    These files contain your CGifT68Doc class.  Edit these files to
+    add your special document data and to implement file saving and loading
+    (via CGifT68Doc::Serialize).
+
+GifT68View.h, GifT68View.cpp - the view of the document
+    These files contain your CGifT68View class.
+    CGifT68View objects are used to view CGifT68Doc objects.
+
 
 
 /////////////////////////////////////////////////////////////////////////////

@@ -26,8 +26,7 @@ octave higher (i.e. "+(b)E")
 Use "p" for a pause.
 
 For a detailed description see (all on one line):
-http://www.ericsson.com/mobilityworld/developerszonedown/downloads/docs/t68/
-t68_at_commands_dg_ver1_external.pdf
+http://www.ericsson.com/mobilityworld/developerszonedown/downloads/docs/t68/t68_at_commands_dg_ver1_external.pdf
 
 
 If you hit "Play", the tone starts playing at the current cursor position!!!!

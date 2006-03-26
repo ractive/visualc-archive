@@ -223,7 +223,7 @@ void CTestProgressDialogDlg::OnStartThread()
 	// Get the exit code of the thread
 	::GetExitCodeThread(pThread->m_hThread, &exit);
 		
-	
+	delete pInfo;
 	delete pThread;
 
 	// Destroy the progress dialog
@@ -236,6 +236,8 @@ UINT CTestProgressDialogDlg::ThreadProc(LPVOID lParam)
 {
 	threadInfo * pInfo = (threadInfo *)lParam;
 
+	CString * pString = new CString;
+
 	// Simulate a lengthy operation
 	for (int i = 0; i < 100; i++) {
 		// Check if the cancel event was set
@@ -247,7 +249,6 @@ UINT CTestProgressDialogDlg::ThreadProc(LPVOID lParam)
 		Sleep(50);
 		// A sample string to pass to the progress dialog
 		// This could be any other object of course...
-		CString * pString = new CString;
 		pString->Format("Progress %d", i);
 
 		// Post an update message to the progress dialog
@@ -269,6 +270,8 @@ UINT CTestProgressDialogDlg::ThreadProc(LPVOID lParam)
 		// Post an update message to the progress dialog
 		::PostMessage(pInfo->hWnd, WM_PROGRESS, (WPARAM)pString, i);
 	}
+
+	delete pString;
 
 	return 0;
 }

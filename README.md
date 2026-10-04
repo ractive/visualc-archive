@@ -118,3 +118,25 @@ Published originally at <http://www.ractive.ch/gpl>. Unless a project states
 otherwise, the code in this repository is licensed under the GNU General Public
 License version 2 (see [LICENSE](LICENSE)). Third-party components keep their
 own licences.
+
+## Where it was published
+
+The project pages on `http://www.ractive.ch/gpl/` are archived in the Wayback
+Machine from August 2000 to 2008. Versions and release dates as listed there:
+
+| App | Versions on ractive.ch | Archived page |
+|---|---|---|
+| DynPfiff | 1.0 (24 Apr 2000) | <http://web.archive.org/web/20000815234544/http://www.ractive.ch/gpl/dynpfiff.html> |
+| MyIPWinClient | 3.3 (4 Aug 2000) | <http://web.archive.org/web/20000815234556/http://www.ractive.ch/gpl/myipwinclient.html> |
+| NTMessenger | 1.0 (8 Jun 2000) | <http://web.archive.org/web/20000815234638/http://www.ractive.ch/gpl/NTMessenger.html> |
+| HardLinker | 1.0 (22 Jun 2000), 1.1 (16 Dec 2000, NT4 support by Armin Gerritsen) | <http://web.archive.org/web/20021002205031/http://www.ractive.ch/gpl/hardlinker.html> |
+| Hexer | 1.101 (26 Jun 2000), 2.0 (26 Jun 2001) | <http://web.archive.org/web/20010801143253/http://www.ractive.ch/gpl/hexer.html> |
+| LaPlaya | 1.1 (July 2001), 1.2 (26 Jun 2001 on the page) | <http://web.archive.org/web/20010703041606/http://ractive.ch/gpl/laplaya.html> |
+| EMelodyLab | 1.0 (10 Nov 2001), 1.2 (30 Nov 2001) | <http://web.archive.org/web/20011215042446/http://www.ractive.ch/gpl/EMelodyLab.html> |
+| NetConfigurator | 1.0 (13 Nov 2002) | <http://web.archive.org/web/20021230092610/http://www.ractive.ch/gpl/NetConfigurator.html> |
+
+Download sites that still list some of them: Softpedia's "@ractive" developer
+page (HardLinker 1.1 with 2,960 downloads and a 4.0/5 rating, NTMessenger,
+LaPlaya, Hexer 2.0, NetConfigurator, the PHP "updater"), Brothersoft (LaPlaya,
+NetConfigurator) and downloadsource.net (HardLinker). Bluesson, BlueRC,
+FTPSync, WinAmpRCServer and the experiments were never published.
